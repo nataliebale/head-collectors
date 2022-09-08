@@ -1,23 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { MainComponent } from "./main.component";
+import { ProductsComponent } from "./products.component";
+import { StoreModule } from "@ngrx/store";
+import {productReducer} from "./state/product.reducer";
 
 const routes: Routes = [
   {
     path: '',
-    component: MainComponent,
+    component: ProductsComponent,
   },
 ];
 
 @NgModule({
   declarations: [
-    MainComponent
+    ProductsComponent
   ],
   imports: [
     RouterModule.forChild(routes),
-    CommonModule
+    CommonModule,
+    StoreModule.forFeature('products', productReducer)
   ],
   // providers: [ NotificationsService ]
 })
-export class MainModule {}
+export class ProductsModule {}

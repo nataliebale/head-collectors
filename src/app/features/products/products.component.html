@@ -1,0 +1,31 @@
+<div class="page">
+
+  <div class="products-list-page">
+    <div class="product">
+      <div class="product-item">
+        <span class="product-label">
+          Name:
+        </span>
+        test product
+        <span *ngIf="showProductCode" class="product-label">
+          (34675464rwedfw35wedrf6g65468)
+        </span>
+      </div>
+      <div class="product-item">
+        <span class="product-label">
+          UUID:
+        </span>
+        test product UUID
+        <span *ngIf="showProductCode" class="product-label">
+          (25433465365346)
+        </span>
+      </div>
+    </div>
+
+    <button class="product-btn" (click)="onDisplayProductCodeClick()">
+      {{ btnTitle }}
+    </button>
+
+  </div>
+
+</div>
